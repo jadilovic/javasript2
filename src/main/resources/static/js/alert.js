@@ -1,4 +1,63 @@
 
+let n = 20;
+
+nextPrime:
+for(let i = 2; i < n; i++){
+		for(j = 2; j < i; j++){
+			if(i % j == 0) continue nextPrime;
+			}
+		alert(i);
+		}
+
+/**
+let num;
+do {
+	num = prompt("Enter number greater than 100", 0);
+}while(num <= 100 && num);
+
+
+
+let i = 0;
+while (i < 3) {
+  alert( `number ${i}!` );
+  i++;
+}
+
+
+for(let i = 1; i < 11; i++){
+	if(i % 2 == 0) alert(i);
+}
+
+
+outer: for (let i = 0; i < 3; i++) {
+
+  for (let j = 0; j < 3; j++) {
+
+    let input = prompt(`Value at coords (${i},${j})`, '');
+
+    if(!input) break outer;
+    // what if we want to exit from here to Done (below)?
+  }
+}
+
+alert('Done!');
+
+
+let i = 0;
+for(;;){
+	alert(i++);
+	if(i == 40) break;
+}
+
+let firstName = null;
+let lastName = null;
+let nickName = "";
+
+// show the first not-null/undefined value
+alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
+
+
+
 let user = prompt("Enter user name");
 let password;
 
@@ -17,7 +76,6 @@ if(user == "Admin"){
 	alert("I don't know you");
 }
 
-/**
 
 
 let age = prompt("Enter age", 0);
