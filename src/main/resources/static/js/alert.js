@@ -1,3 +1,41 @@
+
+let user = prompt("Enter user name");
+let password;
+
+if(user == "Admin"){
+	password = prompt("Enter password");
+	if(password == "TheMaster") {
+		alert("Welcome");
+	} else if (password == ""){
+		alert("Canceled");
+	} else {
+		alert("Wrong Password");
+	}
+} else if(user == "" || user == null){
+	alert("Canceled");
+} else {
+	alert("I don't know you");
+}
+
+/**
+
+
+let age = prompt("Enter age", 0);
+
+if(!(age >= 14) && !(age <= 90)){
+	alert("inclusive");
+} else {
+	alert("not inclusive");
+}
+
+
+let firstName = "";
+let lastName = "";
+let nickName = "";
+
+alert( firstName || lastName || nickName || "Anonymous"); // SuperCoder
+
+
 let login = prompt("Enter position");
 
 let msg = (login == "Employee") ? "Hello" :
