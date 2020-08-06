@@ -1,4 +1,47 @@
 
+let a = +prompt('a?', '');
+
+if (a == 0) {
+  alert( 0 );
+}
+if (a == 1) {
+  alert( 1 );
+}
+
+if (a == 2 || a == 3) {
+  alert( '2,3' );
+}
+
+
+/**
+let br = prompt("How to you surf the internet");
+if(br === "Edge"){
+	alert("You have got the Edge!");
+} else if(br === "Chrome" || br === "Firefox" || br === "Safari" || br === "Opera"){
+	alert("Okey we support these browsers too");
+} else {
+	alert("We hope this page looks ok");
+}
+
+let browser = prompt("which browser do you use");
+
+switch (browser) {
+  case 'Edge':
+    alert( "You've got the Edge!" );
+    break;
+
+  case 'Chrome':
+  case 'Firefox':
+  case 'Safari':
+  case 'Opera':
+    alert( 'Okay we support these browsers too' );
+    break;
+
+  default:
+    alert( 'We hope that this page looks ok!' );
+}
+
+/**
 let n = 20;
 
 nextPrime:
@@ -9,7 +52,7 @@ for(let i = 2; i < n; i++){
 		alert(i);
 		}
 
-/**
+
 let num;
 do {
 	num = prompt("Enter number greater than 100", 0);
