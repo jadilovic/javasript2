@@ -1,6 +1,51 @@
 
+
+function showMessage2(from, hello) {
+ 
+  return from + " : " + hello;
+}
+
+
+
+function showMessage(from, text=showMessage2("ja2", "pozdrav2")) {
+
+  from = '*' + from + '*'; // make "from" look nicer
+
+  alert( from + ': ' + text );
+}
+
+let from = "Ann";
+
+showMessage(from, "Hello"); // *Ann*: Hello
+
+showMessage(from);
+
+// the value of "from" is the same, the function modified a local copy
+alert( from ); // Ann
+
+/**
+
+let name = prompt("What is your name?", "");
+alert(`your name is ${name}`);
+
+let isBoss = confirm("Are you the boss?");
+alert(isBoss);
+
+
 let a = +prompt('a?', '');
 
+switch(a){
+case 0: alert(0);
+break;
+case 1: alert(1);
+break;
+case 2:
+case 3: alert("2, 3");
+break;
+default: alert("default");
+}
+
+/*
 if (a == 0) {
   alert( 0 );
 }
