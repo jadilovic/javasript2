@@ -1,3 +1,30 @@
+let x = prompt("Broj x", "");
+let n = prompt("Broj n", "");
+
+function pow(x, n){
+	let result = x;
+	for(let i = 1; i < n; i++){
+		result *= x;
+	}
+	return result;
+}
+
+if(n < 1){
+	alert(`${n} It must be positive number`);
+} else {
+	alert(pow(x, n));
+}
+
+/**
+let age = prompt("How old are you?")
+
+function checkAge(age) {
+  return (age > 18) || confirm('Did parents allow you?');
+}
+
+alert(checkAge(age));
+
+/**
 function checkAge(age) {
   if (age >= 18) {
     return true;
@@ -14,6 +41,16 @@ if ( checkAge(age) ) {
   alert( 'Access denied' );
 }
 
+function showMovie(age) {
+	  if ( !checkAge(age) ) {
+	    return;
+	  }
+
+	  alert( "Showing you the movie" ); // (*)
+	  // ...
+	}
+
+showMovie(8);
 
 /**
 
