@@ -1,7 +1,45 @@
+let user = { name: "John",
+			age: 5};
+
+let key = prompt("What value dou you want to know?", "name");
+
+alert(user[key]);
 
 
+/**
+alert(user["likes birds"]);
 
+user["likes birds"] = false;
 
+alert(user["likes birds"]);
+
+/**
+let user1 = new Object();
+  let user2 = {name: "John",
+		  		age: 44,
+		  		"likes birds": true};
+  
+  user1.name = "Jasmin";
+  user1.age = 99;
+  
+  alert(user1.name);
+  alert(user1.age);
+  
+  user2.isAdmin = true;
+  
+  alert(user2.name);
+  alert(user2.age);
+  alert(user2.isAdmin);
+
+  delete(user1.age);
+  alert(user1.age);
+  
+  
+  const user3 = {name: "John"};
+  user3.name = "Bob";
+  alert(user3.name);
+
+/**
 describe("pow", function() {
 
   describe("raises x to power 3", function() {
@@ -73,3 +111,4 @@ describe("test", function() {
   it('test 2', () => alert(2));
 
 });
+**/
