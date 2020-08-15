@@ -1,3 +1,90 @@
+let user = {name: "John",
+			surename: "Smith",
+			}
+
+alert(user.name + ", " + user.surename);
+
+user.name = "Pete";
+
+alert(user.name + ", " + user.surename);
+
+delete user.name;
+
+alert(user.name + ", " + user.surename);
+
+
+/**
+
+let user = {name: "Bob", age: 9, isAdmin: true};
+
+for(list in user){
+	alert(list);
+}
+
+for(list in user){
+	alert(user[list]);
+}
+
+/**
+let user1 = {name: "aki", age: 33};
+
+alert("name" in user1);
+
+alert("baba" in user1);
+
+
+let user = {};
+
+alert(user.noSuchProperty === undefined);
+
+
+/**
+let obj = {
+		broj1: 1,
+		broj2: 2,
+		broj3: 3
+}
+
+alert(obj.broj1 + obj.broj2 + obj.broj3);
+
+/**
+let name = prompt("Enter name: ", "name");
+let age = prompt("Enter age: ", 0);
+
+let user = makeUser(name, age);
+
+alert(user.name + " and " + user.age);
+
+
+function makeUser(name, age){
+	return {
+		name,
+		age
+	}
+}
+
+
+/**
+
+let fruit = prompt("What fruit do you want", "apple");
+
+let basket = {[fruit]: 7};
+
+alert(basket.apple);
+
+let bag = {};
+
+bag[fruit] = 10;
+
+alert(bag.orange);
+
+let total = {
+	[fruit + "Banana"]: 11
+};
+
+alert(total.limunBanana);
+
+/**
 let user = { name: "John",
 			age: 5};
 
