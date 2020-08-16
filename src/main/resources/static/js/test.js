@@ -1,3 +1,21 @@
+
+let schedule = {};
+
+alert(isEmpty(schedule));
+
+schedule["8:30"] = "get up";
+
+alert(isEmpty(schedule));
+alert(schedule["8:30"]);
+
+
+function isEmpty(schedule){
+	for(key in schedule){
+		return false;
+	}
+	return true;
+}
+/**
 let user = {name: "John",
 			surename: "Smith",
 			}
