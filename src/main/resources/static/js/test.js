@@ -1,3 +1,121 @@
+
+let globalSymbol = Symbol.for("global");
+let localSymbol = Symbol("local");
+
+alert(Symbol.keyFor(globalSymbol));
+alert(Symbol.keyFor(localSymbol));
+
+alert(globalSymbol.description);
+alert(localSymbol.description);
+
+/**
+
+let sys = Symbol.for("name");
+let sys2 = Symbol.for("id");
+
+alert(Symbol.keyFor(sys));
+alert(Symbol.keyFor(sys2));
+
+/**
+ * 
+let id = Symbol.for("id");
+
+let idAgain = Symbol.for("id");
+
+alert(idAgain === id);
+
+
+
+/**
+
+let id = Symbol("id");
+
+let user = {
+		name: "John",
+		[id]: 123
+}
+
+let clone = Object.assign({}, user);
+
+alert(Object.keys(clone));
+
+alert(clone.name + ", and " + clone[id]);
+
+/**
+
+let id = Symbol("id");
+
+let user = {
+  name: "John",
+  age: 30,
+  [id]: 123
+};
+
+for (let key in user) alert(key); // name, age (no symbols)
+
+// the direct access by the symbol works
+alert( "Direct: " + user[id] );
+
+alert(Object.keys(user));
+
+/**
+let id = Symbol("id");
+
+let user = {
+  name: "John",
+  [id]: 123 // not "id": 123
+};
+
+alert(user[id]);
+
+/**
+let user = { // belongs to another code
+  name: "John"
+};
+
+let id = Symbol("id");
+
+user[id] = 1;
+
+alert( user[id] ); // we can access the data using the symbol as the key
+
+/**
+let id = Symbol("what id");
+
+alert(id.toString());
+alert(id.description);
+
+
+/**
+let user = {
+		name: "Aki"
+}
+
+alert(user?.name.lastName);
+
+
+/**
+let accumulator = new Accumulator(1); // initial value 1
+
+function Accumulator(startingValue){
+	
+	this.value = startingValue;
+	
+	this.read = function(){
+		this.value += +prompt("How much to add", 0);
+	}
+	
+}
+
+accumulator.read(); // adds the user-entered value
+accumulator.read(); // adds the user-entered value
+accumulator.read();
+
+alert(accumulator.value); // shows the sum of these values
+
+
+/**
+
 let obj = {};
 
 function A() { return obj; }
