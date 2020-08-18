@@ -1,3 +1,111 @@
+
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    alert( this.step );
+    return this;
+  }
+}
+
+ladder.up().up().down().up().down().showStep(); // 1
+
+/**
+
+let calculator = {
+  read(){
+	  this.num1 = +prompt("Enter num 1: ", 0);
+	  this.num2 = +prompt("Enter num 2: ", 0);
+  },
+  sum(){
+	  return this.num1 + this.num2;
+  },
+  mul(){
+	  return this.num1 * this.num2;
+  }
+  
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+
+
+
+/**
+function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+};
+
+let user = makeUser();
+
+alert( user.ref.name ); // What's the result?
+
+/**
+let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+  alert( this.name );
+}
+
+// use the same function in two objects
+user.f = sayHi;
+admin.f = sayHi;
+
+// these calls have different this
+// "this" inside the function is the object "before the dot"
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+admin['f'](); // Admin (dot or square brackets access the method – doesn't matter)
+
+/**
+let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    alert( user.name ); // leads to an error
+  }
+
+};
+
+
+let admin = user;
+user = null; // overwrite to make things obvious
+
+admin.sayHi(); // Whoops! inside sayHi(), the old name is used! error!
+
+/**
+let user = {name: "John",
+			age: 77,
+			goodDay(){
+				alert("How are you John?");
+			}
+		};
+
+user.sayHi = function(){
+	alert("My name is " + user.name);
+}
+
+user.sayHi();
+user.goodDay();
+
+for(key in user)
+	alert(user[key]);
+/**
+
 let user = {
   name: "John",
   sizes: {
