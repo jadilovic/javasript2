@@ -1,4 +1,60 @@
+let obj = {};
 
+function A() { return obj; }
+function B() { return obj; }
+
+alert( new A() == new B() ); // true
+
+/**
+function User(name) {
+  this.name = name;
+
+  this.sayHi = function() {
+    alert( "My name is: " + this.name );
+  };
+}
+
+function Action(){
+	this.swim = function(){
+		alert("You are swiming");
+	}
+}
+
+let john = new User("John");
+let bob = new User("Bob");
+let s = new Action();
+
+s.swim();
+
+john.sayHi(); // My name is: John
+bob.sayHi();
+
+/*
+john = {
+   name: "John",
+   sayHi: function() { ... }
+}
+*/
+
+/**
+
+let user = new User("Jack");
+
+alert(user.name); // Jack
+alert(user.isAdmin); // false
+
+
+function User(name) {
+  // this = {};  (implicitly)
+
+  // add properties to this
+  this.name = name;
+  this.isAdmin = false;
+
+  // return this;  (implicitly)
+}
+
+/**
 let ladder = {
   step: 0,
   up() {
