@@ -1,4 +1,144 @@
 
+let num1 = 12.36;
+alert( num1.toFixed(1) ); // "12.4"
+
+let num = 1.23456;
+
+alert( Math.floor(num * 100) / 100 ); // 1.23456 -> 123.456 -> 123 -> 1.23
+
+/**
+
+alert( 12345699..toString(36) ); // 2n9c
+
+alert((123456).toString(36));
+/**
+let num = 255;
+
+alert( num.toString(16) );  // ff
+alert( num.toString(2) );   // 11111111
+
+/**
+alert( 0xff ); // 255
+alert( 0xFF ); // 255 (the same, case doesn't matter)
+let a = 0b11111111; // binary form of 255
+let b = 0o377; // octal form of 255
+
+alert( a == b ); // true, the same number 255 at both sides
+
+
+// -3 divides by 1 with 3 zeroes
+let num = 1e-3;
+
+//1e-3 = 1 / 1000 (=0.001)
+alert(num);
+
+// -6 divides by 1 with 6 zeroes
+let num2 = 1.23e-6;
+alert(num2);
+//1.23e-6 = 1.23 / 1000000 (=0.00000123)
+
+/**
+let billion = 1e9;  // 1 billion, literally: 1 and 9 zeroes
+
+alert( 7.3e9 );  // 7.3 billions (7,300,000,000)
+
+"strict mode"
+
+let word = "Hello";
+
+word.test = 5;
+
+alert(word.test);
+
+/**
+let num = Number("123");
+
+alert(num + 2);
+
+
+/**
+let n = 0;
+
+alert(n + " is type " + typeof n);
+
+let num = new Number(0);
+
+alert(num + " is type: " + typeof num);
+
+if(num){
+	alert(num + " is thruty");
+}
+
+/**
+let num = 1.123456;
+
+alert( num.toFixed(2) );
+
+
+/**
+let bob = "Hello";
+
+alert(bob.toUpperCase());
+
+
+/**
+let user = {name: "John",
+			age: 7,
+			hiBoy: function(){
+				alert("Hi boy " + this.name);
+			}
+		}
+
+alert(user.hiBoy() + " " + user.name);
+user.hiBoy();
+
+/**
+
+let obj = {
+  // toString handles all conversions in the absence of other methods
+  toString() {
+    return "2";
+  }
+};
+
+alert(obj * 2); // 4, object converted to primitive "2", then multiplication made it a number
+
+/**
+
+let user = {
+		name: "John",
+		money: 1000,
+		
+		toString(){
+			return `{name: "${this.name}"}`;
+		},
+		
+		valueOf(){
+			return this.money;
+		}
+}
+
+alert(user);
+alert(+user);
+alert(user + 500);
+/**
+let user = {
+  name: "John",
+  money: 1000,
+
+  [Symbol.toPrimitive](hint) {
+    alert(`hint: ${hint}`);
+    return hint == "string" ? `{name: "${this.name}"}` : this.money;
+  }
+};
+
+// conversions demo:
+alert(user); // hint: string -> {name: "John"}
+alert(+user); // hint: number -> 1000
+alert(user + 500); // hint: default -> 1500
+
+/**
+
 let globalSymbol = Symbol.for("global");
 let localSymbol = Symbol("local");
 
