@@ -1,4 +1,47 @@
 
+let num1 = +prompt("Enter num 1", '');
+let num2 = +prompt("Enter num 2", '');
+
+alert(num1 + num2);
+/**
+alert(parseInt("iii"));
+
+alert( parseInt('0xff', 16) ); // 255
+alert( parseInt('ff', 16) ); // 255, without 0x also works
+
+alert( parseInt('2n9c', 36) ); // 123456
+
+/**
+alert( parseInt('100px') ); // 100
+alert( parseFloat('12.5em') ); // 12.5
+
+alert( parseInt('12.3') ); // 12, only the integer part is returned
+alert( parseFloat('12.3.4') ); // 12.3, the second point stops the reading
+
+
+let num = +prompt("Enter number", "");
+
+alert(isFinite(num));
+
+/**
+alert( isFinite("15") ); // true
+alert( isFinite("str") ); // false, because a special value: NaN
+alert( isFinite(Infinity) ); // false, because a special value: Infinity
+
+// Hello! I'm a self-increasing number!
+alert( 9999999999999999 ); // shows 10000000000000000
+
+/**
+alert(0.1 + 0.2 == 0.3);
+
+alert(0.1 + 0.2);
+
+let sum = 0.1 + 0.2;
+
+alert(+sum.toFixed(1) == 0.3);
+
+alert(+sum.toFixed(2));
+/**
 let num1 = 12.36;
 alert( num1.toFixed(1) ); // "12.4"
 
