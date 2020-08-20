@@ -1,4 +1,82 @@
 
+function sum(a, b) {
+  return a + b;
+}
+
+alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
+//Another advantage of using backticks is that they allow a string to span multiple lines:
+
+let guestList = `Guests:
+ * John
+ * Pete
+ * Mary
+`;
+
+alert(guestList); // a list of guests, multiple lines
+
+/**
+function random(min, max){
+	let rand = (Math.random() * (max - min)) + min;
+	let fix = Math.floor(rand);
+	return fix;
+}
+
+alert(random(1, 5));
+alert(random(1, 5));
+alert(random(1, 5));
+alert(random(1, 5));
+alert(random(1, 5));
+alert(random(1, 5));
+
+/**
+let i = 0;
+while (i < 11) {
+  i += 0.2;
+  if (i > 9.8 && i < 10.2) alert( i );
+}
+
+
+/**
+function readNumber() {
+  let num;
+
+  do {
+    num = prompt("Enter a number please?", 0);
+  } while ( !isFinite(num) );
+
+  if (num === null || num === '') return null;
+
+  return +num;
+}
+
+alert(`Read: ${readNumber()}`);
+
+/**
+
+let num = null;
+
+do{
+	num = readNumber();
+	if(num == "" || num == null){
+		num = null;
+		break;
+	}
+} while(!isFinite(num));
+
+alert(num);
+
+function readNumber(){
+	let num = prompt("Enter number", "");
+	return num;
+}
+/**
+let sum = Math.round(6.35 * 10) / 10;
+
+alert( sum.toFixed(1) ); // 6.3
+
+
+
+/**
 let num1 = +prompt("Enter num 1", '');
 let num2 = +prompt("Enter num 2", '');
 
