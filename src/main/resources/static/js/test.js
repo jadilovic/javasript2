@@ -1,4 +1,52 @@
+let text = 'Hi';
 
+text = 'h' + text[1];
+alert( text[0] ); 
+alert(text);
+
+/**
+
+let list = "Counting";
+
+for(let char of list){
+	alert(char);
+}
+
+/**
+let word = "Jasmin";
+
+alert(word[0]);
+alert(word.charAt(2));
+alert(word[word.length - 1]);
+
+alert("my\n".length);
+
+let rijec = `Hello`;
+
+alert( rijec[1000] ); // undefined
+alert( rijec.charAt(1000) ); // '' (an empty string)
+
+
+
+/**
+alert( "\u00A9" ); // ©
+alert( "\u{20331}" ); // 佫, a rare Chinese hieroglyph (long unicode)
+alert( "\u{1F60D}" ); // 😍, a smiling face symbol (another long unicode)
+
+
+
+/**
+
+let str1 = "Hello\n\tWorld"; // two lines using a "newline symbol"
+
+// two lines using a normal newline and backticks
+let strstr = `Hello
+World`;
+
+alert(str1 + " and " + strstr + " are the same: \n" + (str1 == strstr)); // true
+
+
+/**
 function sum(a, b) {
   return a + b;
 }
