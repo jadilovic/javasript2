@@ -1,3 +1,66 @@
+
+let strN = "Widget";
+
+if (~strN.indexOf("Widget")) {
+  alert( 'Found it!' ); // works
+}
+
+
+/**
+alert( ~4 ); // -5, 
+alert( ~3 ); // -4, 
+alert( ~2 ); // -3, the same as -(2+1)
+alert( ~1 ); // -2, the same as -(1+1)
+alert( ~0 ); // -1, the same as -(0+1)
+alert( ~-1 ); // 0, the same as -(-1+1)
+alert( ~-2 ); // 1
+alert( ~-3 ); // 2
+alert( ~-4 ); // 3
+alert( ~-5 ); // 4
+
+/**
+let strK = "As slay as a fox and as dog as cat slay as";
+
+let target = "As";
+
+let pos = 0;
+
+while(true){
+	pos = strK.indexOf(target, pos);
+	if(pos == -1) break;
+	
+	alert(`Position of target AS is at ${pos}`);
+	pos += 1;
+}
+
+ while((pos = strK.indexOf("a", pos + 1)) != -1){
+	alert("Position of target A is at " + pos);
+}
+
+
+
+/**
+let strL = 'Widget with id';
+
+alert( strL.indexOf('Widget') ); // 0, because 'Widget' is found at the beginning
+alert( strL.indexOf('widget') ); // -1, not found, the search is case-sensitive
+
+alert( strL.indexOf("id") ); // 1, "id" is found at the position 1 (..idget with id)
+
+alert(strL.indexOf("wit", 7));
+alert( strL.indexOf("id", 3) ); // 12
+
+/**
+let testing = "InterFace";
+
+alert(testing.toUpperCase());
+alert(testing.toLowerCase());
+alert(testing[5].toLowerCase());
+alert("BigFootAnimal".toLowerCase());
+alert("BigFootAnimal"[3].toLowerCase());
+alert("ThatIsMe"[4]);
+
+/**
 let text = 'Hi';
 
 text = 'h' + text[1];
