@@ -1,4 +1,40 @@
 
+let words = "stringify";
+
+alert(words.substring(1, 6));
+alert(words.substring(6, 1));
+
+/**
+
+// start at the 4th position from the right, end at the 1st from the right
+alert( words.slice(-4, -1) ); // 'gif'
+
+/**
+
+let word = "Thank you very much";
+
+alert(word.slice(5, 10));
+alert(word.slice(2, 5));
+alert(word.slice(15));
+
+
+/**
+let sent = "Widget";
+
+alert(sent.startsWith("wid"));
+alert(sent.endsWith("get"));
+
+/**
+alert("Widget".includes("id"));
+alert("Widget".includes("id", 3));
+
+/**
+
+alert( "Widget with id".includes("Widget") ); // true
+
+alert( "Hello".includes("Bye") ); // false
+
+/**
 let strN = "Widget";
 
 if (~strN.indexOf("Widget")) {
