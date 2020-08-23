@@ -1,8 +1,71 @@
 
-let words = "stringify";
+let words = "stringify what are you doing";
 
+alert( extractCurrencyValue('$120') === 120 ); // true
+
+alert(extractCurrencyValue('$120') + 2);
+
+function extractCurrencyValue(value){
+	let num = value.slice(1);
+	return +num;
+}
+
+/**
+alert(truncate("What I'd like to tell on this topic is:", 20)); // "What I'd like to te…"
+
+	alert(truncate("Hi everyone!", 20)); //"Hi everyone!"
+		
+		function truncate(text, num){
+			return (text.length > 20) ? text.slice(0, num - 1) + "..." : text;
+		}
+
+/**
+alert(checkSpam('buy ViAgRA now'));
+alert(checkSpam('free xxxxx'));
+alert(checkSpam("innocent rabbit"));
+
+function checkSpam(text){
+	let test = text.toUpperCase();
+	if(test.includes("VIAGRA") || test.includes("XXX")){
+		return true;
+	}
+	return false;
+}
+/**
+alert(ucFirst(words) == "Stringify what are you doing");
+
+function ucFirst(text){
+	return text[0].toUpperCase() + text.slice(1);
+}
+
+/**
+alert(words);
+alert(words.trim());
+
+alert( 'Österreich'.localeCompare('Zealand') ); // -1
+
+alert("\u005a");
+
+/**
+for(let i = 65; i < 450; i++){
+	words += String.fromCodePoint(i);
+}
+alert(words);
+
+/**
+alert("\u005a");
+
+/**
+for(let i = 0; i < words.length; i++){
+	alert(words.codePointAt(i) + ", is letter: " + String.fromCodePoint(words.codePointAt(i)));
+}
+
+
+/**
 alert(words.substring(1, 6));
 alert(words.substring(6, 1));
+alert(words.substr(3, 3));
+
 
 /**
 
