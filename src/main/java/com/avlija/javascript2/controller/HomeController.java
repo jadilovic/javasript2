@@ -30,10 +30,10 @@ public class HomeController {
     }
     
     
-    @RequestMapping(value={"/index3"}, method = RequestMethod.GET)
+    @RequestMapping(value={"/game"}, method = RequestMethod.GET)
     public ModelAndView index3Page(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index3");
+        modelAndView.setViewName("game");
         return modelAndView;
     }
 }

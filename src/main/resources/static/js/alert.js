@@ -3,6 +3,7 @@ let value = "#value";
 
 value = "Hello World";
 
+alert("Helor from Alert.js");
 
 /**
 
