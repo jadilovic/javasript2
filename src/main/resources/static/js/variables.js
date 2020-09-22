@@ -1,3 +1,22 @@
+
+
+let number = "77";
+
+console.log(typeof number);
+
+number = 77.2345678;
+
+console.log(number.toFixed(2));
+
+console.log(typeof number);
+
+let dog = {name: "bob", sort: "buldog"};
+
+console.log(dog.name + ", and " + dog.sort);
+
+alert(dog.name + ", and " + dog.sort);
+
+
 const button = document.querySelector('button');
 
 button.onclick = function() {
@@ -29,9 +48,11 @@ button1.onclick = function(){
 
 	nameText.textContent = "text " + name;
 	ageText.textContent= age;
-	
+	townText.textContent = town;
+
+	let list = ["Bob", "Mark", "Steve"];
 	for(let i = 0; i < 5; i++){
-		townText.textContent = town;
+		console.log(list[i]);
 	}
 }
 
