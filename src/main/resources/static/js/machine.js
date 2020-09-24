@@ -29,7 +29,8 @@ const output = document.querySelector(".output");
 
 //output.textContent = "I like the song " + song + " I gave it score of " + (score * highestScore) + "%";
 
-output.textContent = `I like the song " ${song} ". I gave it score of ${score * highestScore}%`;
+output.textContent = `I like the song " ${song} ". 
+\nI gave it score of ${score * highestScore}%`;
 
 const examReport = document.querySelector(".examReport");
 let examScore = prompt("Enter exam score.");
@@ -38,10 +39,26 @@ examReport.textContent = `You scored ${ examScore }/${ examHighestScore } (${ Ma
 				${ (examScore/examHighestScore) >= 0.5 ? 'Well done, you passed!' : 'Bad luck, you didn\'t pass this time.' }`;
 
 
+let browserType = "mozzila";
+alert(browserType[browserType.length - 1]);
 
 
+const list = document.querySelector('.output ul');
+list.innerHTML = '';
+let cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
 
+for (let i = 0; i < cities.length; i++) {
+  let input = cities[i];
+  // write your code just below here
 
+  let result = input.toLowerCase();
+let cap = result.charAt(0);
+result = result.replace(result[0], cap.toUpperCase());
+
+  let listItem = document.createElement('li');
+  listItem.textContent = result;
+  list.appendChild(listItem);
+}
 
 
 
