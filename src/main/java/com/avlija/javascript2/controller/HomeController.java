@@ -22,10 +22,10 @@ public class HomeController {
         return modelAndView;
     }
     
-    @RequestMapping(value={"/index2"}, method = RequestMethod.GET)
+    @RequestMapping(value={"/story"}, method = RequestMethod.GET)
     public ModelAndView index2Page(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index2");
+        modelAndView.setViewName("story");
         return modelAndView;
     }
     

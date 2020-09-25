@@ -42,7 +42,7 @@ examReport.textContent = `You scored ${ examScore }/${ examHighestScore } (${ Ma
 let browserType = "mozzila";
 alert(browserType[browserType.length - 1]);
 
-
+/**
 const list = document.querySelector('.output ul');
 list.innerHTML = '';
 let cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
@@ -59,7 +59,7 @@ result = result.replace(result[0], cap.toUpperCase());
   listItem.textContent = result;
   list.appendChild(listItem);
 }
-
+**/
 
 
 
