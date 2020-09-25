@@ -15,10 +15,10 @@ public class HomeController {
         return modelAndView;
     }
     
-    @RequestMapping(value={"/hex"}, method = RequestMethod.GET)
+    @RequestMapping(value={"/condition"}, method = RequestMethod.GET)
     public ModelAndView hexPage(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("hex");
+        modelAndView.setViewName("condition");
         return modelAndView;
     }
     

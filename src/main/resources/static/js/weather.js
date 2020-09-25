@@ -1,51 +1,46 @@
 
-const customName = document.getElementById('customname');
-const randomize = document.querySelector('.randomize');
-const story = document.querySelector('.story');
+const select = document.querySelector("select");
+const para = document.querySelector(".para");
 
-function randomValueFromArray(array){
-  const random = Math.floor(Math.random()*array.length);
-  return array[random];
+select.addEventListener("change", setWeather);
+
+function setWeather(){
+	
+	const choice = select.value;
+	
+	  switch (choice) {
+	  case "sunny": 
+		  para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+		  break;
+	  case "rainy":
+		    para.textContent = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
+		  break;
+	  case "snowning":
+		    para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+		  break;
+	  case "overcast":
+		    para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+		  break;
+	  default:
+		    para.textContent = '';
+	  }
 }
 
-let storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day."
+let cheese = 'Cheddar';
 
-	let insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
+if (cheese) {
+  console.log('Yay! Cheese available for making cheese on toast.');
+} else {
+  console.log('No cheese on toast for you today.');
+}
 
-	let insertY = ["the soup kitchen", "Disneyland", "the White House"];
-	
-	let insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"]
+let shoppingDone = false;
+let childsAllowance;
 
+if (shoppingDone) { // don't need to explicitly specify '=== true'
+  childsAllowance = 10;
+} else {
+  childsAllowance = 5;
+}
+console.log(childsAllowance);
 
-	randomize.addEventListener('click', result);
-
-	function result() {
-
-		  let newStory = storyText;
-		  
-		  let xItem = randomValueFromArray(insertX);
-		  let yItem = randomValueFromArray(insertY);
-		  let zItem = randomValueFromArray(insertZ);
-		  
-		  newStory = newStory.replace(/:insertx:/g, xItem);
-		  //newStory = newStory.replace(":insertx:", xItem);
-		  newStory = newStory.replace(":inserty:", yItem);
-		  newStory = newStory.replace(":insertz:", zItem);
-		
-	  if(customName.value !== '') {
-	    let name = customName.value;
-	    newStory = newStory.replace("Bob", name);
-	  }
-	  
-	  if(document.getElementById("uk").checked) {
-	    let weight = Math.round(300 / 14) + " stone";
-	    let temperature = Math.round((94 - 32) * 0.5556) + " centigrade";
-
-	    newStory = newStory.replace("94 fahrenheit", temperature);
-	    newStory = newStory.replace("300 pounds", weight);
-	    
-	  }
-
-	  story.textContent = newStory;
-	  story.style.visibility = 'visible';
-	}
