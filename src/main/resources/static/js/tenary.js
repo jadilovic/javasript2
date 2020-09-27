@@ -160,6 +160,30 @@ let sectionx = document.querySelector('.book');
 sectionx.appendChild(parag);
 	
 	
+// SAMPLE PRIME LOOP
 
 
+let k = 500;
+let paray = document.createElement('p');
+
+function isPrime(num) {
+  for(let i = 2; i < num; i++) {
+    if(num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Add your code here
+do{
+	if(isPrime(k)){
+		paray.textContent += k + ", ";
+	}
+	k--;
+}while(k > 1)
+
+// Don't edit the code below here!
+let sectiony = document.querySelector('.prime');
+sectiony.appendChild(paray);
 

@@ -36,4 +36,11 @@ public class HomeController {
         modelAndView.setViewName("game");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/functions"}, method = RequestMethod.GET)
+    public ModelAndView functionsPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("functions");
+        return modelAndView;
+    }
 }
