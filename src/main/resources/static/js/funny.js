@@ -47,12 +47,85 @@
     
     
     let myArray = ['I', 'love', 'chocolate', 'frogs'];
-    let madeAString = myArray.join(' ');
+    let madeAStringd = myArray.join(' ');
     // returns 'I love chocolate frogs'
     let madeAString = myArray.join(",");
     // returns 'I,love,chocolate,frogs'
+    alert(madeAString);
     
     
+    // FUNCTION SCOPE EXAMPLE
+    let x = 1;
+
+    function a() {
+      let y = 2;
+      output(y);
+    }
+
+    function b() {
+      let z = 3;
+      output(z);
+    }
+
+    function output(value) {
+      const para = document.createElement('p');
+      document.body.appendChild(para);
+      para.textContent = 'Value: ' + value;
+    }
     
+    output(x);
+    a();
+    b();
+    
+    function heading(value){
+    	const head = document.createElement("h1");
+    	document.body.appendChild(head);
+    	head.textContent = "Naslov je " + value;
+    }
+    
+    heading("hi");
+    
+    
+    // CUSTOM ALERT WINDOW
+    
+    const btnn = document.querySelector(".mess");
+    btnn.onclick = function(){
+    	displayMessage("Wou, this is different message.");
+    }
+    
+    
+    function displayMessage(msgText, msgType){
+    	const html = document.querySelector('html');
+
+    	const panel = document.createElement('div');
+    	panel.setAttribute('class', 'msgBox');
+    	html.appendChild(panel);
+
+    	const msg = document.createElement('p');
+    	msg.textContent = msgText;
+    	panel.appendChild(msg);
+
+    	const closeBtn = document.createElement('button');
+    	closeBtn.textContent = 'x';
+    	panel.appendChild(closeBtn);
+
+    	closeBtn.onclick = function() {
+    	  panel.parentNode.removeChild(panel);
+    	}
+    	
+    	if (msgType === 'warning') {
+    		  msg.style.backgroundImage = 'url(icons/warning.png)';
+    		  panel.style.backgroundColor = 'red';
+    		} else if (msgType === 'chat') {
+    		  msg.style.backgroundImage = 'url(icons/chat.png)';
+    		  panel.style.backgroundColor = 'aqua';
+    		} else {
+    		  msg.style.paddingLeft = '20px';
+    		}
+    }
+    
+    displayMessage();
+    displayMessage('Your inbox is almost full — delete some mails', 'warning');
+    displayMessage('Brian: Hi there, how are you today?','chat');
     
     
