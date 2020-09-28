@@ -115,9 +115,11 @@
     	
     	if (msgType === 'warning') {
     		  msg.style.backgroundImage = 'url(icons/warning.png)';
+    		  msg.style.backgroundSize = "contain";
     		  panel.style.backgroundColor = 'red';
     		} else if (msgType === 'chat') {
     		  msg.style.backgroundImage = 'url(icons/chat.png)';
+    		  msg.style.backgroundSize = "contain";
     		  panel.style.backgroundColor = 'aqua';
     		} else {
     		  msg.style.paddingLeft = '20px';
@@ -127,5 +129,45 @@
     displayMessage();
     displayMessage('Your inbox is almost full — delete some mails', 'warning');
     displayMessage('Brian: Hi there, how are you today?','chat');
+    
+    
+    // SAMPLE RETURN FUNCTIONS
+    
+    const input = document.querySelector(".numberInput");
+    const pard = document.querySelector("p");
+    
+    input.onchange = function(){
+    	const num = input.value;
+    	if(isNaN(num)){
+    		pard.textContent = "Please enter some number";
+    	} else {
+    		pard.textContent = num + " squared is " + squared(num) + ". - " +
+    							num + " cubed is " + cubed(num) + ". - " +
+    							num + " factorial " + factorial(num) + ".";
+    	}
+    }
+    
+    
+    function squared(num) {
+    	  return num * num;
+    	}
+
+    	function cubed(num) {
+    	  return num * num * num;
+    	}
+
+    	function factorial(num) {
+    	  if (num < 0) return undefined;
+    	  if (num == 0) return 1;
+    	  let x = num - 1;
+    	  while (x > 1) {
+    	    num *= x;
+    	    x--;
+    	  }
+    	  return num;
+    	}
+    
+    
+    
     
     
