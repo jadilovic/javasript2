@@ -168,6 +168,30 @@
     	}
     
     
-    
+    // SAMPLE CHANGE BACKGROUND COLOR
+    	
+    	const bbt = document.querySelector(".color");
+    	
+    	function random(num){
+    		return Math.floor(Math.random() * (num + 1));
+    	}
+    		
+    	function bgChange(){
+    		let bgc = "rgb(" + random(255) + ", " + random(255) + ", " + random(255) + ")";
+    		document.body.style.backgroundColor = bgc;
+    	}	
+    		
+    		bbt.addEventListener("click", bgChange);
+    		bbt.addEventListener("click", displayMessage);
+    		
+    		
+    		const bbt2 = document.querySelector(".color2");
+    		
+    		bbt2.addEventListener("click", function(){
+        		let bgc = "rgb(" + random(255) + ", " + random(255) + ", " + random(255) + ")";
+        		document.body.style.backgroundColor = bgc;
+        		bbt.removeEventListener("click", bgChange);
+    		});
+    		
     
     
