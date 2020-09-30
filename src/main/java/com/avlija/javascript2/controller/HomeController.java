@@ -43,4 +43,11 @@ public class HomeController {
         modelAndView.setViewName("functions");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/validation"}, method = RequestMethod.GET)
+    public ModelAndView validPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("validation");
+        return modelAndView;
+    }
 }
