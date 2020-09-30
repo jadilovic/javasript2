@@ -193,5 +193,49 @@
         		bbt.removeEventListener("click", bgChange);
     		});
     		
+    		
+    	//	const buttons = document.querySelectorAll('button');
+
+    	//	for (let i = 0; i < buttons.length; i++) {
+    	//	  buttons[i].onclick = bgChange;
+    	//	}
     
+    	//	buttons.forEach(function(button){
+    	//		button.onclick = bgChange;
+    	//	});
+    		
+    		let btnw = document.querySelector(".element")
+    		
+    		function bgChange(e) {
+    			  const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+    			  e.target.style.backgroundColor = rndCol;
+    			  console.log(e);
+    			}  
+
+    			btnw.addEventListener('click', bgChange);
+    			
+    			
+    // USEFUL EVENT TARGET
+    			
+    		      for(let i = 1; i <= 16; i++) {
+    		          const myDiv = document.createElement('div');
+    		          document.body.appendChild(myDiv);
+    		        }
+
+    		        function random(number) {
+    		          return Math.floor(Math.random() * number);
+    		        }
+
+    		        function bgChange() {
+    		          const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+    		          return rndCol;
+    		        }
+
+    		        const divs = document.querySelectorAll('div');
+
+    		        for(let i = 0; i < divs.length; i++) {
+    		          divs[i].onclick = function(e) {
+    		            e.target.style.backgroundColor = bgChange();
+    		          }
+    		        }			
     
