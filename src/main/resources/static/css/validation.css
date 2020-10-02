@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+		a {
+		classA;
+		}
+		
+		b{
+		classB;
+		}
+		
       div {
         position: absolute;
         top: 50%;
