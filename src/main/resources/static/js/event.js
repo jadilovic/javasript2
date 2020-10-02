@@ -1,0 +1,30 @@
+
+let canvas = document.querySelector('canvas');
+    let ctx = canvas.getContext('2d');
+
+    function drawCircle(x, y, size) {
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.fillStyle = 'black';
+      ctx.arc(x, y, size, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    let x = 50;
+    let y = 15;
+    const size = 30;
+
+    drawCircle(x, y, size);
+    
+    window.addEventListener("keydown", function(event) {
+    	  let str = event.key;
+    	  if(str === "w"){
+    		  y++;
+    	  }
+    	    drawCircle(x, y, size);
+    	}, true);
+
+
+

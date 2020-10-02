@@ -50,4 +50,11 @@ public class HomeController {
         modelAndView.setViewName("validation");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/event"}, method = RequestMethod.GET)
+    public ModelAndView eventPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("event");
+        return modelAndView;
+    }
 }
