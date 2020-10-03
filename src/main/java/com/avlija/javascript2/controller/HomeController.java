@@ -57,4 +57,11 @@ public class HomeController {
         modelAndView.setViewName("event");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/galery"}, method = RequestMethod.GET)
+    public ModelAndView galeryPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("galery");
+        return modelAndView;
+    }
 }
