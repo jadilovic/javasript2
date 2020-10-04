@@ -25,24 +25,34 @@
     
     // OBJECT BASICS
     
-    const section = document.querySelector("section");
+    const section = document.querySelector(".section1");
     
     let cat = {
   		  name : 'Bertie',
   		  breed : 'Cymric',
   		  color : 'white',
   		  greeting: function() {
-  		    console.log('Meow!');
+  		    console.log('Hello said ' + this.name + " the " + this.breed);
   		  }
   		}
 
   		// Put your code here
-    	let catName = cat.name;
+    	let catName = cat["name"];
  
     
 cat.color = "black";
 
+let cat2 = {
+		  name : 'Bety',
+		  breed : 'Siamic',
+		  color : 'yellow',
+		  greeting: function() {
+		    console.log('Hello said ' + this.name + " the " + this.breed);
+		  }
+		}
+
 cat.greeting();
+cat2.greeting();
 
   		// Don't edit the code below here
 
@@ -54,3 +64,41 @@ cat.greeting();
 
   		section.appendChild(para1);
   		section.appendChild(para2);
+  		
+  		
+  		// SECOND ASSIGNMENT OBJECTS
+  		
+  	    const section2 = document.querySelector(".section2");
+  	    
+  	    let para = document.createElement("p");
+  	    
+  	    let band1 = {
+  	    		name: "Oasis",
+  	    		nationality: "Britain",
+  	    		genre: ["alternative", "rock", "punk"],
+  	    		members: 5,
+  	    		formed: 1994,
+  	    		split: false,
+  	    		albums: [
+  	    			{name: "Blue", released: 1999},
+  	    			{name: "Red", released: 2009},
+  	    			{name: "Yellow", released: 2019}
+  	    			]
+  	    		}
+  	    let active = (band1.split === false) ? (new Date().getFullYear() - band1.formed) : (band1.split - band1.formed);
+  	    
+  	    let bandInfo = band1.name + " is from " + band1.nationality + " and active " + active + " and style " + 
+  	    				band1.genre[0] + " and frist album was " + band1.albums[0]["name"] + " released in " + 
+  	    				band1.albums[0]["released"];
+  	    
+  	    para.textContent = bandInfo;
+  	    section2.appendChild(para);
+  	   
+  	    
+  	    
+  	    
+  	    
+  	    
+  	    
+  	    
+  	    
