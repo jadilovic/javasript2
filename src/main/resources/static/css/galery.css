@@ -43,3 +43,10 @@ button {
   float: left;
   cursor: pointer;
 }
+
+.thumb-bar2 img {
+  display: block;
+  width: 20%;
+  float: left;
+  cursor: pointer;
+}
