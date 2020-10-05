@@ -72,4 +72,11 @@ public class HomeController {
         modelAndView.setViewName("oojs");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/objects"}, method = RequestMethod.GET)
+    public ModelAndView objectsPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("objects");
+        return modelAndView;
+    }
 }

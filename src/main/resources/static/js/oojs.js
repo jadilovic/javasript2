@@ -127,15 +127,47 @@ cats[0].greeting();
   		  this.gender = gender,
   		  this.interests = interests,
   		  this.bio = function(){
-  			  alert(this.name.first + " is " + this.age + " years old and has interests " + interests[0] + " and " + interests[1]);
+  			  let heshe = (this.gender === "male") ? "he" : "she";
+  			  let interestsList = "";
+  			  for(let i = 0; i < interests.length; i++){
+  				  if(i === (interests.length - 2)){
+  	  				  interestsList += interests[i] + " and ";
+  				  } else if (i === (interests.length - 1)){
+  	  				  interestsList += interests[i] + ".";
+  				  } else {
+  	  				  interestsList += interests[i] + ", ";
+  				  }
+  			  }
+  			  alert(this.name.first + " is " + this.age + " years old and " + heshe + " has interests " + interestsList);
   		  }
   		  this.greeting = function() {
   		    alert('Hi! I\'m ' + this.name.first + '.');
   		  }
   		}
   	  
-  	    let person1 = new Person("Bob", "Cucker", 55, "male", ['ball', 'softball', 'rugdby']);
-  	    let person2 = new Person("Mark");
+  	    let person1 = new Person("Mark", "Cucker", 55, "male", ['ball', 'softball', 'rugdby']);
+  	    let person2 = new Person("Bob", "Muker", 55, "female", ['ball']);
+  	    let person3 = new Person("Chirs", "Fucker", 55, false, ['ball', 'softball']);
+  	    let person4 = new Person("Veli", "Budala", 55, "male", ['ball', 'softball', 'rugdby', 'tenis', 'mlatis']);
+  	    let person6 = new Person("Bob", "Muker", 55, "female", []);
+  	    let person5 = new Person("Mark");
+  	    
+  	    
+  	    let person7 = new Object();
+  	    
+  	    person7.name = "Aki";
+  	    person7["age"] = 42;
+  	    person7.greeting = function(){
+  	    	alert("Hi, my name is " + this.name);
+  	    }
+  	    
+  	    
+  	    let person8 = Object.create(person7);
+  	    
+  	    
+  	    
+  	    
+  	    
   	    
   	    
   	    
