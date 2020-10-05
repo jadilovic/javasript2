@@ -51,8 +51,29 @@ let cat2 = {
 		  }
 		}
 
+function Animal(name, breed, color){
+	this.name = name;
+	this.breed = breed;
+	this.color = color;
+	this.greeting = function(){
+		console.log('Hello said ' + this.name + " the " + this.breed);
+	}
+}
+
+const cat3 = new Animal("Cici", "Tiger", "Green");
+
+cat3.greeting();
+
 cat.greeting();
 cat2.greeting();
+
+
+let cats = [];
+cats.push(cat);
+cats.push(cat2);
+
+cats[0].greeting();
+
 
   		// Don't edit the code below here
 
@@ -95,9 +116,26 @@ cat2.greeting();
   	    section2.appendChild(para);
   	   
   	    
+  	    // CREATING OBJECTS 
   	    
-  	    
-  	    
+  	  function Person(first, last, age, gender, interests) {
+  		  this.name = {
+  				  first: first,
+  				  last: last
+  		  		},
+  		  this.age = age,
+  		  this.gender = gender,
+  		  this.interests = interests,
+  		  this.bio = function(){
+  			  alert(this.name.first + " is " + this.age + " years old and has interests " + interests[0] + " and " + interests[1]);
+  		  }
+  		  this.greeting = function() {
+  		    alert('Hi! I\'m ' + this.name.first + '.');
+  		  }
+  		}
+  	  
+  	    let person1 = new Person("Bob", "Cucker", 55, "male", ['ball', 'softball', 'rugdby']);
+  	    let person2 = new Person("Mark");
   	    
   	    
   	    
