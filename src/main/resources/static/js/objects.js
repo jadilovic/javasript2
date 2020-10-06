@@ -54,7 +54,35 @@ function Shape(name, sides, sideLength) {
     	  let person = new Person("Jasmin", "Adilovic", 42, "male", ["golf", "skiing", "singing"]);
     	  
     	  
+    	  // INHERITANCE OBJECTS
     	  
+    	  function Individual(first, last, age, gender, interests) {
+    		  this.name = {
+    		    first,
+    		    last
+    		  };
+    		  this.age = age;
+    		  this.gender = gender;
+    		  this.interests = interests;
+    		};
+    		
+    		Individual.prototype.greeting = function() {
+    			  alert('Hi! I\'m ' + this.name.first + '.');
+    			};
+    			
+    			function Teacher(first, last, age, gender, interests, subject) {
+    				  Individual.call(this, first, last, age, gender, interests);
+
+    				  this.subject = subject;
+    				}	
+    			
+    			
+    			
+    			
+    			
+    			
+    			
+    		
     	  
     	  
   	    
