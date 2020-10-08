@@ -70,16 +70,66 @@ function Shape(name, sides, sideLength) {
     			  alert('Hi! I\'m ' + this.name.first + '.');
     			};
     			
-    			function Teacher(first, last, age, gender, interests, subject) {
+    	
+    	function Teacher(first, last, age, gender, interests, subject) {
     				  Individual.call(this, first, last, age, gender, interests);
 
     				  this.subject = subject;
     				}	
+    	
+    	Teacher.prototype = Object.create(Individual.prototype);
+    	
+    	Object.defineProperty(Teacher.prototype, "constructor", {
+    		value: Teacher,
+    		enumerable: false,
+    		writable: true
+    	});
+    	
+    	Teacher.prototype.greeting = function() {
+    		  let prefix;
+
+    		  if (this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
+    		    prefix = 'Mr.';
+    		  } else if (this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
+    		    prefix = 'Ms.';
+    		  } else {
+    		    prefix = 'Mx.';
+    		  }
+
+    		  alert('Hello. My name is ' + prefix + ' ' + this.name.last + ', and I teach ' + this.subject + '.');
+    		};
+    		
+    		
+    		function Student(first, last, age, gender, interests){
+    			Person.call(this, first, last, age, gender, interests);
+    		}
+    		
+    		Student.prototype = Object.create(Person.prototype);
+    		
+    		Object.defineProperty(Student.prototype, "constructor", {
+        		value: Student,
+        		enumerable: false,
+        		writable: true
+    		});
+    		
+    		Student.prototype.greeting = function(){
+    			alert("Yo, I am " + this.name.first);
+    		}
+    		
+    		Student.prototype.farewell = function(){
+    			alert("Goodby mutherfucker, I am " + this.name.first);
+    		}
     			
+    	function Brick(){
+    		this.width = 10;
+    		this.height = 20;
+    	}
     			
-    			
-    			
-    			
+    	function BrickBlueKind(){
+    		Brick.call(this);
+    		this.color = "blue";
+    		this.opacity = 0.5;
+    	}		
     			
     			
     		
