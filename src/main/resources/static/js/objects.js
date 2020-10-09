@@ -131,7 +131,25 @@ function Shape(name, sides, sideLength) {
     		this.opacity = 0.5;
     	}		
     			
-    			
+    class Man {
+    	constructor(first, last, age, gender, interests){
+    		this.name = {
+    				first,
+    				last
+    		    };
+    		this.age = age;
+    		this.gender = gender;
+    		this.interests = interests;
+    	}
+    	
+    	greeting(){
+    		console.log("Hi from Man Class, I am " + this.name.first);
+    	}
+    	
+    	farewell(){
+    		console.log(`${this.name.last} has left the building`);
+    	}
+    }			
     		
     	  
     	  
