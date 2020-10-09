@@ -150,7 +150,22 @@ function Shape(name, sides, sideLength) {
     		console.log(`${this.name.last} has left the building`);
     	}
     }			
-    		
+    	
+    class Trucker extends Man{
+    	constructor(first, last, age, gender, interests, subject, grade){
+        	super(first, last, age, gender, interests);
+        	this.subject = subject;
+        	this.grade = grade;
+    	}
+    }
     	  
+    
+    
+    
+    
+    
+    
+    
+    
     	  
   	    
