@@ -159,13 +159,58 @@ function Shape(name, sides, sideLength) {
     	}
     }
     	  
+    class Driver extends Man{
+    	constructor(first, last, age, gender, interests, subject, grade){
+        	super(first, last, age, gender, interests);
+        	this._subject = subject;
+        	this.grade = grade;
+    	}
+    	
+    	set subject(newSubject){
+    		this._subject = newSubject;
+    	}
+    	
+    	get subject(){
+    		return this._subject;
+    	}
+    }
+    
+    let drv = new Driver("bobo", "dodo", 55, "female", ["woods", "moods"], "maths", 4);
+
+    
+ // Check the default value
+    console.log(drv.subject) // Returns "Dark arts"
+
+    // Change the value
+    drv.subject = "Balloon animals" // Sets _subject to "Balloon animals"
+
+    // Check it again and see if it matches the new value
+    console.log(drv.subject) // Returns "Balloon animals"
     
     
+    // Using ES class syntax
     
+    class ShapeES {
+    	constructor(name, sides, sideLength){
+    	      this.name = name;
+    	      this.sides = sides;
+    	      this.sideLength = sideLength;
+    	}
+
+    	calcPerimeter(){
+    			alert("Perimeter of shape " + this.name + " with " + this.sides + " sides is " + (this.sides * this.sideLength));
+    		}
+    }
     
-    
-    
-    
+    class Square extends ShapeES {
+    	constructor(sideLength){
+    		super("square", 4, sideLength);
+    	}
+    	
+    	calcArea(){
+			alert(`Area of shape ${this.name} with ${this.sides} sides is ${Math.pow(this.sides, 2)}`);
+    	}
+    }
     
     	  
   	    

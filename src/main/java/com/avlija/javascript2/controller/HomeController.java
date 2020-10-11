@@ -79,4 +79,11 @@ public class HomeController {
         modelAndView.setViewName("objects");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/jsontest"}, method = RequestMethod.GET)
+    public ModelAndView jsonPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("JSONTest");
+        return modelAndView;
+    }
 }
