@@ -63,7 +63,7 @@
     
     // CATS TEST YOUR SKILLS
     
-    const sectionC = document.querySelector('.cats');
+    const section = document.querySelector('.cats');
 
     let para1 = document.createElement('p');
     let para2 = document.createElement('p');
@@ -71,26 +71,103 @@
     let motherInfo = 'The mother cats are called ';
     let kittenInfo;
 
-    fetch('sample.json')
-    .then(response => response.text())
-    .then(text => displayCatInfo(text))
+    const catString = {
+    		cats: [
+    	    	{
+    	    	    name : "Lindy",
+    	    	    breed : "Cymric",
+    	    	    color : "white",
+    	    	    kittens : [
+    	    	      {
+    	    	        name : "Percy",
+    	    	        gender : "m"
+    	    	      },
+    	    	      {
+    	    	        name : "Thea",
+    	    	        gender : "f"
+    	    	      },
+    	    	      {
+    	    	        name : "Annis",
+    	    	        gender : "f"
+    	    	      }
+    	    	    ]
+    	    	},
+    	    	{
+    	    	    "name" : "Mina",
+    	    	    "breed" : "Aphrodite Giant",
+    	    	    "color" : "ginger",
+    	    	    "kittens" : [
+    	    	      {
+    	    	        "name" : "Doris",
+    	    	        "gender" : "f"
+    	    	      },
+    	    	      {
+    	    	        "name" : "Pickle",
+    	    	        "gender" : "f"
+    	    	      },
+    	    	      {
+    	    	        "name" : "Max",
+    	    	        "gender" : "m"
+    	    	      }
+    	    	    ]
+    	    	 },
+    	    	  {
+    	    	    "name" : "Antonia",
+    	    	    "breed" : "Ocicat",
+    	    	    "color" : "leopard spotted",
+    	    	    "kittens" : [
+    	    	      {
+    	    	        "name" : "Bridget",
+    	    	        "gender" : "f"
+    	    	      },
+    	    	      {
+    	    	        "name" : "Randolph",
+    	    	        "gender" : "m"
+    	    	      }
+    	    	    ]
+    	    	  }
+    	    	]	
+    };
 
     function displayCatInfo(catString) {
       let total = 0;
       let male = 0;
 
       // Add your code here
+        //  const cats = JSON.parse(catString); // convert it to an object
+       const cats = catString;
+          
+    	  for (let i = 0; i < cats.length; i++) {
+      	  
+    		  motherInfo += cats.cats[i].name;
+    		  
+    		  if(i == (cats.length - 1)){
+    			  motherInfo += ".";
+    		  } else if (i == (cats.length - 2)){
+    			  motherInfo += " and ";
+    		  } else {
+    			  motherInfo += ", ";
+    		  }
 
+      	    const kittens = cats[i].kittens;
+      	    for (let j = 0; j < kittens.length; j++) {
+    		total++;
+                    if(kittens[j].gender === "m"){
+                       male++;
+                      }
+      	    }
+           }
 
-
+            let female = total - male;
+           kittenInfo = "Total number of kittens: " + total + ", male: " + male + ", female: " + female;
     // Don't edit the code below here!
 
       para1.textContent = motherInfo;
       para2.textContent = kittenInfo;
     }
 
-    sectionC.appendChild(para1);
-    sectionC.appendChild(para2);
+    section.appendChild(para1);
+    section.appendChild(para2);
     
     
     
