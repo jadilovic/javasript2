@@ -213,4 +213,22 @@ function Shape(name, sides, sideLength) {
     }
     
     	  
+    const btn = document.querySelector("button");
+    
+    btn.addEventListener("click", () => {
+    	let myDate;
+    	for(let i = 0; i < 10000000; i++){
+    		let date = new Date();
+    		myDate = date;
+    	}
+    	
+    	console.log(myDate);
+    	let pElm = document.createElement("p");
+    	pElm.textContent = "This is newly added paragraph.";
+    	document.body.appendChild(pElm);
+    });
+    
+    
+    
+    
   	    
