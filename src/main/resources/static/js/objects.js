@@ -213,7 +213,7 @@ function Shape(name, sides, sideLength) {
     }
     
     	  
-    const btn = document.querySelector("button");
+    const btn = document.querySelector(".press");
     
     btn.addEventListener("click", () => {
     	let myDate;
@@ -227,6 +227,36 @@ function Shape(name, sides, sideLength) {
     	pElm.textContent = "This is newly added paragraph.";
     	document.body.appendChild(pElm);
     });
+    
+    
+    const canvas = document.querySelector("canvas");
+    
+    const ctx = canvas.getContext("2D");
+    
+    const width = canvas.width = window.innerWidth;
+    const height = canvas.height = window.innerHeight;
+    
+    const fillBtn = document.querySelector(".fillBtn");
+    
+    const alertBtn = document.querySelector(".alertBtn");
+    
+    const color = "red";
+    
+    function expensiveOperation(color){
+    	let date;
+    	for(let i = 0; i < 10000000; i++){
+    		date = new Date();
+    	}
+    	alert(date);
+    }
+    
+    
+    fillBtn.addEventListener("click", expensiveOperation);
+    
+    alertBtn.addEventListener("click", function(){
+    	alert("Alert is activated");
+    })
+    
     
     
     
