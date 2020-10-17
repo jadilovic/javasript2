@@ -258,6 +258,41 @@ function Shape(name, sides, sideLength) {
     })
     
     
+    // Async example
+    
+    const wbtn = document.querySelector(".workerBtn");
+    
+    const worker = new Worker("worker.js");
+    
+    wbtn.addEventListener("click", () => {
+    	worker.postMessage("Go!");
+        
+        let pElem = document.createElement("p");
+        pElem.textContent = "This is newly added paragraph";
+        
+        document.body.appendChild(pElem);
+    });
+
+    worker.onmessage = function(e){
+    	console.log(e.data);
+    }
+    
+    
+    const btnNew = document.querySelector(".work");
+    
+    btnNew.addEventListener("click", () => {
+    	alert("You clicked worker button");
+        
+        let ppelem = document.createElement("p");
+        ppelem.textContent = "Added paragrap with text";
+       document.body.appendChild(ppelem);
+    });
+
+	
+    
+    
+    
+    
     
     
     
