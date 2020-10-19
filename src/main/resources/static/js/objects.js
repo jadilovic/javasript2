@@ -288,10 +288,38 @@ function Shape(name, sides, sideLength) {
        document.body.appendChild(ppelem);
     });
 
-	
+    
+    // Simple XHR async callback example
+    
+    function loadAsset(url, type, callback) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.responseType = type;
+
+        xhr.onload = function() {
+          callback(xhr.response);
+        };
+
+        xhr.send();
+      }
+
+      function displayImage(blob) {
+        let objectURL = URL.createObjectURL(blob);
+
+        let image = document.createElement('img');
+        image.src = objectURL;
+        document.body.appendChild(image);
+      }
+
+      loadAsset('images/coffee.jpg', 'blob', displayImage);
     
     
+      
+    let gods = ["Ateon", "Peteon", "Driteon", "Zeus"];
     
+    gods.forEach(function(eachName, index){
+    	console.log(index + ", " + eachName);
+    });
     
     
     
