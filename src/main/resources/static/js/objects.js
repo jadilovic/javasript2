@@ -314,12 +314,48 @@ function Shape(name, sides, sideLength) {
       loadAsset('images/coffee.jpg', 'blob', displayImage);
     
     
+      // Simple forEach example
       
     let gods = ["Ateon", "Peteon", "Driteon", "Zeus"];
-    
+        
     gods.forEach(function(eachName, index){
     	console.log(index + ", " + eachName);
+        const listOfGods = document.createElement("p");
+    	listOfGods.textContent = index + ": " + eachName;
+    	document.body.appendChild(listOfGods);
+        loadAsset('images/coffee.jpg', 'blob', displayImage);
     });
+    
+    
+    let fruits = ["Apple", "Peach", "Greape", "Strawberry"];
+    
+    fruits.forEach(eachFunction);
+    
+    function eachFunction(item, index){
+    	document.getElementById("demo").innerHTML += index + ": " + item + "<br>";
+    }
+    
+    
+    // The nature of asynchronous code
+    
+    console.log("Starting");
+    
+    let image;
+    
+    fetch("images/coffee.jpg").then((response) => {
+    	console.log("It worked :)");
+    	return response.blob();
+    }).then((myBlob) => {
+    	let objectURL = URL.createObjectURL(myBlob);
+    	image = document.createElement("img");
+    	image.src = objectURL;
+    	document.body.appendChild(image);
+    }).catch((error) => {
+    	console.log("There has been problem with your fetch opeartion: " + error.message);
+    });
+    
+    console.log("All done");
+    
     
     
     
