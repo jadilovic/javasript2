@@ -350,11 +350,31 @@ function Shape(name, sides, sideLength) {
     	image = document.createElement("img");
     	image.src = objectURL;
     	document.body.appendChild(image);
+    }).then(() => {
+    	console.log("All done inside THEN - " + image.src + " - display");
     }).catch((error) => {
     	console.log("There has been problem with your fetch opeartion: " + error.message);
     });
     
-    console.log("All done");
+   console.log("All done display");
+    
+    
+    // If this confuses you, then consider the following smaller example:
+    
+    const btnTest = document.querySelector(".test");
+    
+    console.log("First Test");
+    
+    btnTest.addEventListener("click", () => {
+    	console.log("Second Test");
+    	console.log("All done" + image.src + "display");
+    });
+    
+    console.log("Third Test");
+    
+    
+    
+    
     
     
     
