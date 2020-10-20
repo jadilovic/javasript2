@@ -93,4 +93,12 @@ public class HomeController {
         modelAndView.setViewName("balls");
         return modelAndView;
     }
+    
+    
+    @RequestMapping(value={"/interval"}, method = RequestMethod.GET)
+    public ModelAndView intervalPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("interval");
+        return modelAndView;
+    }
 }

@@ -373,9 +373,19 @@ function Shape(name, sides, sideLength) {
     console.log("Third Test");
     
     
+    // Intervals
     
+    let myGreeting = setTimeout(function(){
+    	alert("Hello Universe!");
+    }, 2000);
     
+   // myGreeting;
     
+    function greet(who){
+    	alert(`Helo Planet Earth ${who}`);
+    }
+    
+    let grr = setTimeout(greet, 4000, "Vojager");
     
     
     
