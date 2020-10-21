@@ -4,12 +4,13 @@
         width: 300px;
       }
 
+      button {
+        width: 120px;
+      }
+      
       div {
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
       }
-
-      button {
-        width: 120px;
-      }
+}
