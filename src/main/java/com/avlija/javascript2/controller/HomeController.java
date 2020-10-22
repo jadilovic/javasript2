@@ -101,4 +101,12 @@ public class HomeController {
         modelAndView.setViewName("interval");
         return modelAndView;
     }
+    
+    
+    @RequestMapping(value={"/animation"}, method = RequestMethod.GET)
+    public ModelAndView animationPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("animation");
+        return modelAndView;
+    }
 }
