@@ -179,12 +179,46 @@ function fetchAndDecode(url, type){
 	})
 	.catch(e => {
 		console.log("There was a problem with your catch operation " + e.message);
+	}).finally(() => {
+		console.log(`Fetch element for ${url} finished`);
 	});
 }
 
+let coffee = fetchAndDecode("images/coffee.jpg", "blob");
+let tea = fetchAndDecode("images/tea.jpg", "blob");
+let description = fetchAndDecode("images/description", "text");
+
+Promise.all([coffee, tea, description]).then(values =>{
+	console.log(values);
+	
+	let objectURL1 = URL.createObjectURL(values[0]);
+	let objectURL2 = URL.createObjectURL(values[1]);
+	let descText = values[2];
+	
+	let image1 = document.createElement("img");
+	let image2 = document.createElement("img");
+	image1.src = objectURL1;
+	image2.src = objectURL2;
+	document.body.appendChild(image1);
+	document.body.appendChild(image2);
+	
+	let para = document.createElement("p");
+	para.textContent = descText;
+	document.body.appendChild(para);
+});
 
 
+let timeoutPromise = new Promise((resolve, reject) => {
+	setTimeout(function(){
+		alert("Success!");
+	}, 2000);
+});
 
+timeoutPromise.then((message) => {
+	alert(message);
+});
+
+timeoutPromise.then(alert);
 
 
 
