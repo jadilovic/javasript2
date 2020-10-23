@@ -208,6 +208,7 @@ Promise.all([coffee, tea, description]).then(values =>{
 });
 
 
+//
 let timeoutPromise = new Promise((resolve, reject) => {
 	setTimeout(function(){
 		alert("Success!");
@@ -221,11 +222,100 @@ timeoutPromise.then((message) => {
 timeoutPromise.then(alert);
 
 
+function timeoutPromise2(message, interval){
+	return new Promise((resolve, reject) => {
+		if(message === "" || typeof message !== "string"){
+			reject("Entered message is empty or not a string.");
+		} else if(interval < 0 || typeof interval !== "number"){
+			reject("Entered interval is negative or not a number");
+		} else {
+			setTimeout(function(){
+				resolve(message);
+			}, interval);
+		}
+	});
+};
+
+timeoutPromise2("what", 3000)
+.then(message => {
+	alert(message);
+}).catch(e => {
+	console.log("Error: " + e);
+})
 
 
+//
+
+async function hello() {
+	return greeting = await Promise.resolve("Hello");
+}
+
+hello().then(alert);
 
 
+// Define custom promise function
+
+function timeoutPromiseX(interval) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function(){
+      resolve("done");
+    }, interval);
+  });
+};
+
+async function timeTestFast() {
+  const timeoutPromise1 = timeoutPromiseX(3000);
+  const timeoutPromise2 = timeoutPromiseX(3000);
+  const timeoutPromise3 = timeoutPromiseX(3000);
+
+  await timeoutPromise1;
+  await timeoutPromise2;
+  await timeoutPromise3;
+}
+
+async function timeTestSlow() {
+	 await timeoutPromiseX(3000);
+	 await timeoutPromiseX(3000);
+	 await timeoutPromiseX(3000);
+	}
+
+let startTimeX = Date.now();
+timeTestFast().then(() => {
+  let finishTime = Date.now();
+  let timeTaken = finishTime - startTimeX;
+  alert("Fast Time Test taken in milliseconds: " + timeTaken);
+});
+
+timeTestSlow().then(() => {
+	  let finishTime = Date.now();
+	  let timeTaken = finishTime - startTimeX;
+	  alert("SlowTime Test2 taken in milliseconds: " + timeTaken);
+	});
 
 
+//
 
+class Person {
+	  constructor(first, last, age, gender, interests) {
+	    this.name = {
+	      first,
+	      last
+	    };
+	    this.age = age;
+	    this.gender = gender;
+	    this.interests = interests;
+	  }
 
+	  async greeting() {
+	    return await Promise.resolve(`Hi! I'm ${this.name.first}`);
+	  };
+
+	  farewell() {
+	    console.log(`${this.name.first} has left the building. Bye for now!`);
+	  };
+	}
+
+	let han = new Person('Han', 'Solo', 25, 'male', ['Smuggling']);
+
+	han.greeting().then(console.log);
+	
