@@ -109,4 +109,11 @@ public class HomeController {
         modelAndView.setViewName("animation");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/apis"}, method = RequestMethod.GET)
+    public ModelAndView apisPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("apis");
+        return modelAndView;
+    }
 }

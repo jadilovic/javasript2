@@ -319,3 +319,55 @@ class Person {
 
 	han.greeting().then(console.log);
 	
+	
+	//
+	
+	function loadAsset(url, type, callback) {
+		  let xhr = new XMLHttpRequest();
+		  xhr.open('GET', url);
+		  xhr.responseType = type;
+
+		  xhr.onload = function() {
+		    callback(xhr.response);
+		  };
+
+		  xhr.send();
+		}
+
+		function displayImage(blob) {
+		  let objectURL = URL.createObjectURL(blob);
+
+		  let image = document.createElement('img');
+		  image.src = objectURL;
+		  document.body.appendChild(image);
+		}
+
+		loadAsset('images/oko.jpg', 'blob', displayImage);
+		
+	
+		let i = Date.now();
+		
+		setTimeout(function run(){
+			console.log(i);
+			i++;
+			
+			setTimeout(run, 1000);
+		}, 1000);
+		
+		
+		///
+		
+		function doClock(){
+			let date = new Date();
+			let time = date.toLocaleTimeString();
+			document.getElementById("demo").textContent = time;
+		}
+		
+		const runTime = setInterval(doClock, 1000)
+		
+		
+		
+		
+		
+		
+		
