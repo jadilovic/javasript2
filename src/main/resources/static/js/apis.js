@@ -63,7 +63,7 @@ para3.appendChild(bol);
 console.log(bol);
 
 ///
-
+/**
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2D");
 
@@ -75,14 +75,30 @@ Ball.prototype.draw = function(){
 	ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
 	ctx.fill();
 }
+*/
 
+const link = document.querySelector("a");
 
+link.textContent = "Mozzila Developer Network";
 
+link.href = "https://developer.mozilla.org/"
 
+const sect = document.querySelector("section");
 
+const par = document.createElement("p");
+par.textContent = "We hope you enjoyed the ride";
 
+sect.appendChild(par);
 
+const text = document.createTextNode(" - the premier source for web development knowledge.");
+const linkPara = document.querySelector(".link");
+linkPara.appendChild(text);
 
+// sect.appendChild(linkPara);
 
+// sect.removeChild(linkPara);
 
+let clonedLink = sect.cloneNode(linkPara);
+
+sect.appendChild(clonedLink);
 
