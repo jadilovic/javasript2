@@ -43,6 +43,44 @@ volumeSlider.addEventListener('input', function() {
 
 audioSource.connect(gainNode).connect(audioCtx.destination);
 
+const em = document.createElement("em");
+const bol = document.createElement("b");
+const para = document.querySelector("p");
+const para2 = document.querySelector(".a");
+const para3 = document.querySelector(".b");
+let word = "word";
+
+em.textContent = "--- text added to para ---";
+bol.textContent = "bold text";
+
+para.appendChild(em);
+console.log(em);
+
+para2.textContent = word;
+console.log(word);
+
+para3.appendChild(bol);
+console.log(bol);
+
+///
+
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2D");
+
+let ball = new Ball();
+
+Ball.prototype.draw = function(){
+	ctx.beginPath();
+	ctx.fillStyle = this.color;
+	ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+	ctx.fill();
+}
+
+
+
+
+
+
 
 
 
