@@ -88,6 +88,18 @@ const sect = document.querySelector("section");
 const par = document.createElement("p");
 par.textContent = "We hope you enjoyed the ride";
 
+par.setAttribute("class", "highlight");
+
+/**
+par.style.color = "white";
+par.style.backgroundColor = "black";
+par.style.padding = "10px";
+par.style.width = "250px";
+par.style.textAlign = "center";
+*/
+
+console.log(par);
+
 sect.appendChild(par);
 
 const text = document.createTextNode(" - the premier source for web development knowledge.");
@@ -98,7 +110,14 @@ linkPara.appendChild(text);
 
 // sect.removeChild(linkPara);
 
-let clonedLink = sect.cloneNode(linkPara);
+let clonedPara = par.cloneNode(true);
 
-sect.appendChild(clonedLink);
+sect.appendChild(clonedPara);
 
+let clonedSect = sect.cloneNode(true);
+
+sect.appendChild(clonedSect);
+
+// sect.removeChild(clonedSect);
+
+clonedSect.remove();
