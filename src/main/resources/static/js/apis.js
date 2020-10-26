@@ -1,5 +1,5 @@
 
-
+/*
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 const audioCtx = new AudioContext();
 
@@ -75,7 +75,7 @@ Ball.prototype.draw = function(){
 	ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
 	ctx.fill();
 }
-*/
+
 
 const link = document.querySelector("a");
 
@@ -96,7 +96,7 @@ par.style.backgroundColor = "black";
 par.style.padding = "10px";
 par.style.width = "250px";
 par.style.textAlign = "center";
-*/
+
 
 console.log(par);
 
@@ -121,3 +121,90 @@ sect.appendChild(clonedSect);
 // sect.removeChild(clonedSect);
 
 clonedSect.remove();
+
+*/
+///
+
+let div = document.querySelector(".win");
+let winWidth = window.innerWidth;
+let winHeight = window.innerHeight;
+	
+	div.style.width = winWidth + "px";
+	div.style.height = winHeight + "px";
+	
+	console.log(winWidth);
+	console.log(winHeight);
+
+
+// Shoping list
+	const ulElement = document.querySelector("ul");
+	const inputElement = document.querySelector("input");
+	const btnElement = document.querySelector("button");
+	
+	btnElement.onclick = function(){
+		let inputValue = inputElement.value;
+		inputElement.value = "";
+		
+		let liElement = document.createElement("li");
+		let spanElement = document.createElement("span");
+		let btn2Element = document.createElement("button");
+		
+		liElement.appendChild(spanElement);
+		spanElement.textContent = inputValue;
+
+		liElement.appendChild(btn2Element);
+		btn2Element.textContent = "Delete";
+		
+		ulElement.appendChild(liElement);
+		
+		btn2Element.onclick = function(e){
+			ulElement.removeChild(liElement);
+		}
+		
+		inputElement.focus();
+	}
+	
+	
+	// try
+	/*
+	   const list = document.querySelector('ul');
+	      const input = document.querySelector('input');
+	      const button = document.querySelector('button');
+
+	      button.onclick = function() {
+	        let myItem = input.value;
+	        input.value = '';
+
+	        const listItem = document.createElement('li');
+	        const listText = document.createElement('span');
+	        const listBtn = document.createElement('button');
+
+	        listItem.appendChild(listText);
+	        listText.textContent = myItem;
+	        listItem.appendChild(listBtn);
+	        listBtn.textContent = 'Delete';
+	        list.appendChild(listItem);
+
+	        listBtn.onclick = function(e) {
+	          list.removeChild(listItem);
+	        }
+
+	        input.focus();
+	      }
+	
+	*/
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
