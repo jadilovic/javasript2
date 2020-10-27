@@ -116,4 +116,19 @@ public class HomeController {
         modelAndView.setViewName("apis");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/ajax"}, method = RequestMethod.GET)
+    public ModelAndView ajaxPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("ajax");
+        return modelAndView;
+    }
+    
+    @RequestMapping(value={"/canstore"}, method = RequestMethod.GET)
+    public ModelAndView canstorePage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("canstore");
+        return modelAndView;
+    }
+    
 }

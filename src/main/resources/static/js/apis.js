@@ -155,10 +155,13 @@ let winHeight = window.innerHeight;
 		liElement.appendChild(btn2Element);
 		btn2Element.textContent = "Delete";
 		
+		console.log(liElement);
+		
 		ulElement.appendChild(liElement);
 		
 		btn2Element.onclick = function(e){
 			ulElement.removeChild(liElement);
+			console.log(e);
 		}
 		
 		inputElement.focus();
