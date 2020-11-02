@@ -131,4 +131,17 @@ public class HomeController {
         return modelAndView;
     }
     
+    @RequestMapping(value={"/starter"}, method = RequestMethod.GET)
+    public ModelAndView starterPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("starter-file");
+        return modelAndView;
+    }
+    
+    @RequestMapping(value={"/acanvas"}, method = RequestMethod.GET)
+    public ModelAndView acanvasPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("acanvas");
+        return modelAndView;
+    }
 }
