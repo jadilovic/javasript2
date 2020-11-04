@@ -158,4 +158,11 @@ public class HomeController {
         modelAndView.setViewName("3Dcube");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/media"}, method = RequestMethod.GET)
+    public ModelAndView mediaPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("media");
+        return modelAndView;
+    }
 }
