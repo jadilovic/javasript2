@@ -83,6 +83,99 @@ ctx.arc(200, 106, 50, degToRad(-45), degToRad(45), true);
 ctx.lineTo(200, 106);
 ctx.fill();
 
+ctx.strokeStyle = "white";
+ctx.lineWidth = 1;
+ctx.font = "36px arial";
+ctx.strokeText("Canvas White Text", 300, 50);
+
+
+ctx.fillStyle = "red";
+ctx.font = "28px georgia";
+ctx.fillText("Canvas Filled Text", 300, 150);
+
+/*
+let image = new Image();
+image.src = "images/firefox.png";
+
+image.onload = function(){
+	// ctx.drawImage(image, 300, 300);
+	ctx.drawImage(image, 20, 20, 185, 175, 50, 50, 185, 175);
+}
+
+
+ctx.translate(width/2, height/2);
+
+//function degToRad(degrees) {
+//	  return degrees * Math.PI / 180;
+//	};
+
+	function rand(min, max) {
+	  return Math.floor(Math.random() * (max-min+1)) + (min);
+	}
+
+	let length = 250;
+	let moveOffset = 20;
+
+	for(var i = 0; i < length; i++) {
+		ctx.fillStyle = 'rgba(' + (255-length) + ', 0, ' + (255-length) + ', 0.9)';
+		ctx.beginPath();
+		ctx.moveTo(moveOffset, moveOffset);
+		ctx.lineTo(moveOffset+length, moveOffset);
+		let triHeight = length/2 * Math.tan(degToRad(60));
+		ctx.lineTo(moveOffset+(length/2), moveOffset+triHeight);
+		ctx.lineTo(moveOffset, moveOffset);
+		ctx.fill();
+
+		length--;
+		moveOffset += 0.7;
+		ctx.rotate(degToRad(5));
+	}
+*/
+	
+	ctx.translate(width/2, height/2);
+	
+	let image2 = new Image();
+	image2.src = "images/walk-right.png";
+	image2.onload = draw;
+	
+	let sprite = 0;
+	let posX = 0;
+		
+	function draw(){
+		ctx.fillRect(-(width/2), -(height/2), width, height);
+
+		ctx.drawImage(image2, (sprite*102), 0, 102, 148, 0+posX, -74, 102, 148);
+
+		  if (posX % 13 === 0) {
+			    if (sprite === 5) {
+			      sprite = 0;
+			    } else {
+			      sprite++;
+			    }
+			  }
+		  
+		  if(posX > width/2) {
+			    newStartPos = -((width/2) + 102);
+			    posX = Math.ceil(newStartPos);
+			    console.log(posX);
+			  } else {
+			    posX += 2;
+			  }
+		  
+		  window.requestAnimationFrame(draw);
+	}
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
 
 
 
