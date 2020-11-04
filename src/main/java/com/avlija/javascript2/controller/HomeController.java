@@ -144,4 +144,18 @@ public class HomeController {
         modelAndView.setViewName("acanvas");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/draw"}, method = RequestMethod.GET)
+    public ModelAndView drawPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("draw");
+        return modelAndView;
+    }
+    
+    @RequestMapping(value={"/cube"}, method = RequestMethod.GET)
+    public ModelAndView cubePage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("3Dcube");
+        return modelAndView;
+    }
 }
