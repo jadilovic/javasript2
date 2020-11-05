@@ -165,4 +165,18 @@ public class HomeController {
         modelAndView.setViewName("media");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/storage"}, method = RequestMethod.GET)
+    public ModelAndView storagePage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("storage");
+        return modelAndView;
+    }
+    
+    @RequestMapping(value={"/notes"}, method = RequestMethod.GET)
+    public ModelAndView notesPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("notes");
+        return modelAndView;
+    }
 }
