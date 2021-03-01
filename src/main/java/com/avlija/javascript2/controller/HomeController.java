@@ -179,4 +179,11 @@ public class HomeController {
         modelAndView.setViewName("notes");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/every"}, method = RequestMethod.GET)
+    public ModelAndView everyMethodArrayDemo(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("every");
+        return modelAndView;
+    }
 }
