@@ -12,6 +12,7 @@ window.onload = function() {
    });
    if(allFieldsEntered) {
      console.log('All the fields are entered');
+     alert('All the fields are entered');
     // All the field values are entered, submit the form
    } else {
      alert("Please, fill out all the field values.");
