@@ -104,5 +104,17 @@ const addAges = employees.reduce(function(accumulator, employee){
 	return accumulator + employee.age;
 }, 0);
 console.log(addAges);
+
+
+const coordinates = [
+	  { x: 1, y: 2 }, 
+	  { x: 2, y: 3 }, 
+	  { x: 3, y: 4 }
+	];
  
+const sum = coordinates.reduce(function(accumulator, value){
+	return accumulator + (value.x + value.y);
+}, 0);
+console.log("Total value: " + sum);
+
 };
