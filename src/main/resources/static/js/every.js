@@ -4,6 +4,10 @@
  * - every
  * - some
  * - filter
+ * - findIndex
+ * - map
+ * - forEach
+ * - find
  */
 
 // every method
@@ -33,6 +37,29 @@ window.onload = function() {
 	  { name: 'John Carte', age: 50 }
 	];
  
+ // forEach method sample
+ employees.forEach(function(employee, index, array){
+	 console.log(employee.name + ", " + employee.age + ", " + index + ", " + array);
+ });
+ 
+ // map method sample
+ const convMapArray = employees.map(function(employee){
+	 return employee.name.toUpperCase() + ", " + (employee.age - 1);
+ });
+ console.log(employees);
+ console.log(convMapArray);
+ 
+ const copyArray = employees.map(function(employee){
+	 return `${employee.name} is ${employee.age} years old`;
+ });
+ console.log(copyArray);
+ 
+ // find method sample
+ const foundEmployee = employees.find(function(employee){
+	 return employee.name.indexOf("Sheridon");
+ });
+ console.log(foundEmployee);
+ 
  // findIndex method
  const index = employees.findIndex(function(employee){
 	 return employee.name.indexOf("Mike") > -1;
@@ -45,7 +72,23 @@ window.onload = function() {
  });
  console.log(filteredEmployees);
  
+ const filteredEmployeesByAge = employees.filter(function(employee){
+	 return employee.age > 25;
+ });
+ console.log(filteredEmployeesByAge);
+ 
+ // every method sample
+ const allAbove20 = employees.every(function(employee){
+	 return employee.age > 20;
+ });
+ console.log("All above 20: " + allAbove20);
+ 
  // some method
+ const oneAbove49 = employees.some(function(employee){
+	 return employee.age > 49;
+ })
+ console.log("One above 49: " + oneAbove49);
+ 
  let indexValue = -1;
  const employee = employees.some(function(employee, index){
 	 const isFound = employee.name.indexOf("John") > -1;
@@ -55,4 +98,11 @@ window.onload = function() {
 		 return isFound;
  });
  console.log(employee, indexValue);
+ 
+//reduce method sample
+const addAges = employees.reduce(function(accumulator, employee){
+	return accumulator + employee.age;
+}, 0);
+console.log(addAges);
+ 
 };
