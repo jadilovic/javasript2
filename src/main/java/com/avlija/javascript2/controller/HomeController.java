@@ -186,4 +186,11 @@ public class HomeController {
         modelAndView.setViewName("every");
         return modelAndView;
     }
+    
+    @RequestMapping(value={"/weather"}, method = RequestMethod.GET)
+    public ModelAndView weatherPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("weather");
+        return modelAndView;
+    }
 }
